@@ -65,8 +65,6 @@ namespace Pokemon_Console
             if (pokemonTeam.Count == 0)
             {
                 Console.WriteLine("Your Team is empty!");
-                Console.ReadKey();
-                Console.Clear();
             }
             else
             {
@@ -83,6 +81,7 @@ namespace Pokemon_Console
                 }
             }
             Console.ReadKey();
+            Console.Clear();
         }
         private void AddPokemonToTeam()
         {
@@ -104,15 +103,17 @@ namespace Pokemon_Console
 
                 Console.WriteLine("Pokemon Level: ");
                 string pokeLevel = Console.ReadLine();
+                int level = 0;
 
                 if (!pokeLevel.All(char.IsDigit))
                 {
                     Console.WriteLine("Pokemon Level must be whole numbers only!");
                     Console.ReadKey();
                 }
-
-
-                int level = int.Parse(pokeLevel);
+                else
+                {
+                    level = int.Parse(pokeLevel);
+                }
                 Console.WriteLine("Pokemon Type: " +
                     "\n1. Normal" +
                     "\n2. Grass" +
@@ -197,7 +198,7 @@ namespace Pokemon_Console
 
 
                 Console.WriteLine("\n\nEnter position number of pokemon you wish to update");
-                int response = int.Parse(Console.ReadLine());
+                int response = int.Parse(Console.ReadLine()) - 1;
                 UpdateAPokemon(response);
             }
         }
@@ -213,7 +214,6 @@ namespace Pokemon_Console
             Console.WriteLine("Lets update this member of our team!" +
                     "\n\nPokemon Species Name: ");
             string species = Console.ReadLine();
-
 
             Console.WriteLine("Pokemon Nick Name: ");
             string name = Console.ReadLine();

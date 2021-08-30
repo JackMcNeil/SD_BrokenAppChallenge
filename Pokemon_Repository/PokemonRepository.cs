@@ -20,13 +20,13 @@ namespace Pokemon_Repository
         //get one pokemon
         public Pokemon GetPokemonByTeamPosition(int teamPosition)
         {
-            Pokemon pokemon = _pokemonTeam[teamPosition - 1];
+            Pokemon pokemon = _pokemonTeam[teamPosition];
             return pokemon;
         }
         //update pokemon
         public void UpdatePokemonByTeamPosition(int teamPosition, Pokemon updates)
         {
-            Pokemon pokemon = _pokemonTeam[teamPosition - 1];
+            Pokemon pokemon = _pokemonTeam[teamPosition];
             pokemon.PokemonSpeciesName = updates.PokemonSpeciesName;
             pokemon.PokemonNickName = updates.PokemonNickName;
             pokemon.Level = updates.Level;
@@ -72,7 +72,7 @@ namespace Pokemon_Repository
         //remove pokemon
         public void RemovePokemonFromTeam(int teamPosition)
         {
-            Pokemon pokemon = _pokemonTeam[teamPosition - 1];
+            Pokemon pokemon = _pokemonTeam[teamPosition];
             _pokemonTeam.Remove(pokemon);
         }
     }
